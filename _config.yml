@@ -23,6 +23,9 @@ collections:
   features:
 
 markdown: CommonMark
+commonmark:
+  options: ["SMART", "UNSAFE"]
+  extensions: ["strikethrough"]
 
 # Exclude from processing.
 # The following items will not be processed, by default.
