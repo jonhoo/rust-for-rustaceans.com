@@ -3,7 +3,6 @@ gem "jekyll", "~> 4.2.1"
 gem "minima", "~> 2.5"
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
-  gem 'jekyll-timeago', '~> 0.13.1'
   gem 'jekyll-commonmark'
 end
 
