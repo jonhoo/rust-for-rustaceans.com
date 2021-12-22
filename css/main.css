@@ -89,47 +89,6 @@ textarea {
 
 /* Layout */
 
-body {
-  display: grid;
-  grid-column-gap: 2em;
-  grid-auto-columns: minmax(0, 1.5fr) minmax(0, 3fr) minmax(0, 2fr);
-  grid-auto-rows: calc(100vh - 2em) auto;
-  grid-auto-flow: column;
-  border-top: 2em solid #8a2a2f;
-  min-height: 100vh;
-  box-sizing: border-box;
-}
-#book {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  padding: 2em 3em;
-}
-#testimonials {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  padding: 2em 0;
-  padding-right: 2em;
-}
-#features {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  padding-top: 2em;
-}
-#errata {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  padding-top: 2em;
-  padding-right: 2em;
-}
-
 /* General styles */
 
 h2 {
