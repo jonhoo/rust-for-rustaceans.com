@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+<section id="book">
+<img src="{{ site.url }}/RustforRustaceans_cover.png" alt="Rust for Rustaceans book cover" id="cover">
+<h1>{{ site.title }}</h1>
+<p>{{ site.description }}</p>
+
+<p>
+You can buy the book <a href="https://nostarch.com/rust-rustaceans">directly
+from the publisher</a>, which nets you the ebook for free if you get
+the print book, or you can get it from <a
+href="https://smile.amazon.com/dp/1718501854">Amazon</a> or a <a
+href="https://www.google.com/shopping/product/1147408932313014600/offers">number
+of other retailers</a>.
+</section>
+
+<section id="testimonials">
+<h2>What readers say</h2>
+{% for t in site.testimonials reversed %}
+<article class="testimonial">
+<p>{{ t.content | markdownify }}</p>
+<footer><p><a href="{{ t.source }}">{{ t.from }}</a></p></footer>
+</article>
+{% endfor %}
+</section>
+
+<section id="features">
+<h2>More about the book</h2>
+{% capture featured %}{% include featured.md %}{% endcapture %}
+{{ featured | markdownify }}
+
+<p><a href="#errata">Errata for the book is listed further down on this page.</a></p>
+
+<h2>Rotating list of interesting stuff</h2>
+{% for feature in site.features reversed %}
+<article class="feature">
+<p>{{ feature.content | markdownify }}</p>
+</article>
+{% endfor %}
+</section>
+
+<section id="errata">
+<h2>Errata</h2>
+{% for error in site.errata %}
+<article class="error">
+<h3>Page {{ error.page }} (chapter {{ error.chapter }})</h3>
+{{ error.content | markdownify }}
+<footer><p>
+{% if error.source %}
+<a href="{{ error.source }}">
+{% endif %}
+  Reported by {{ error.reporter }} on {{ error.date | date: "%b %e, %Y" }}.
+{% if error.source %}
+</a>
+{% endif %}
+</p></footer>
+</article>
+{% endfor %}
+</section>

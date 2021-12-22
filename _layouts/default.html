@@ -1,0 +1,48 @@
+<!doctype html>
+<html class="no-js" lang="en" itemscope itemtype="https://schema.org/Book">
+
+<head>
+  <meta charset="utf-8">
+  <title>{% if page.title %}{{ page.title | escape }} :: {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" itemprop="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | xml_escape }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" itemprop="name" content="Rust for Rustaceans">
+  <meta property="og:type" content="book">
+  <meta property="og:url" content="{{ site.url }}" />
+  <meta property="og:image" itemprop="image" content="{{ site.url }}/RustforRustaceans_cover.png">
+  <meta property="og:book:author" content="Jon Gjengset">
+  <link rel="author" href="https://thesquareplanet.com">
+  <meta property="og:book:isbn" itemprop="isbn" content="9781718501850">
+  <meta itemprop="numberOfPages" content="280">
+  <meta property="og:book:release_date" content="2021-11-12">
+  <meta property="og:book:tag" content="rust">
+  <meta property="og:book:tag" content="rustlang">
+  <meta property="og:book:tag" content="programming">
+  <link rel="publisher" href="https://nostarch.com/">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@jonhoo" />
+  <meta name="twitter:creator" content="@jonhoo" />
+  <meta name="twitter:image" content="{{ site.url }}/RustforRustaceans_cover.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+
+  <meta name="theme-color" content="#fffcc5">
+</head>
+
+<body>
+
+  {{ content }}
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
