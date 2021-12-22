@@ -20,7 +20,7 @@ of other retailers</a>.
 <h2>What readers say</h2>
 {% for t in site.testimonials reversed %}
 <article class="testimonial">
-<p>{{ t.content | markdownify }}</p>
+{{ t.content | markdownify }}
 <footer><p><a href="{{ t.source }}">{{ t.from }}</a></p></footer>
 </article>
 {% endfor %}
@@ -36,7 +36,7 @@ of other retailers</a>.
 <h2>Rotating list of interesting stuff</h2>
 {% for feature in site.features reversed %}
 <article class="feature">
-<p>{{ feature.content | markdownify }}</p>
+{{ feature.content | markdownify }}
 </article>
 {% endfor %}
 </section>
