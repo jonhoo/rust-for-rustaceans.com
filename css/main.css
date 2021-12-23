@@ -195,7 +195,14 @@ a {
 #errata h3 {
   font-size: 1em;
   color: #888;
+  position: relative;
 }
+  #errata h3 a:hover::before {
+    position: absolute;
+    left: -25px;
+    padding-right: 10px;
+    content: '\2002\00a7\2002';
+  }
   #errata article > div {
     padding: .5em 1em;
     background: #fafafa;
