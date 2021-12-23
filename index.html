@@ -16,6 +16,12 @@ href="https://www.google.com/shopping/product/1147408932313014600/offers">number
 of other retailers</a>.
 </section>
 
+<section id="more">
+<h2>More about the book</h2>
+{% capture featured %}{% include featured.md %}{% endcapture %}
+{{ featured | markdownify }}
+</section>
+
 <section id="testimonials">
 <h2>What readers say</h2>
 <div>
@@ -26,12 +32,6 @@ of other retailers</a>.
 </article>
 {% endfor %}
 </div>
-</section>
-
-<section id="more">
-<h2>More about the book</h2>
-{% capture featured %}{% include featured.md %}{% endcapture %}
-{{ featured | markdownify }}
 </section>
 
 <section id="features">
