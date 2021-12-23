@@ -35,10 +35,16 @@ of other retailers</a>.
 </section>
 
 <section id="features">
-<h2>Rotating list of interesting stuff</h2>
+<h2>Updates since the book's release</h2>
 {% for feature in site.features reversed %}
 <article class="feature">
 {{ feature.content | markdownify }}
+{% if feature.see %}
+<footer>
+{% for see in feature.see %}
+<p>» See also page {{ see.page }} (chapter {{ see.chapter }}), "{{ see.section }}".<p>
+{% endfor %}
+{% endif %}
 </article>
 {% endfor %}
 </section>

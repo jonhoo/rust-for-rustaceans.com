@@ -183,9 +183,15 @@ a {
 }
 
 #features .feature {
-  border-left: .5em solid #f6e55c;
+  border-left: 1px solid #f6e55c;
   padding-left: 1em;
 }
+  #features .feature + .feature {
+    margin-top: 1.5em;
+  }
+  #features article footer {
+    text-align: left !important;
+  }
 
 #testimonials > div {
   display: flex;
@@ -203,20 +209,20 @@ a {
   #testimonials article > div {
     flex-grow: 1;
   }
-  #testimonials footer p {
-    margin-top: 0;
-  }
 
 #errata article {
   border-bottom: 1px solid #f6e55c;
 }
-#testimonials article footer, #errata article footer {
+#testimonials article footer, #errata article footer, #features article footer {
   padding: .2em .5em;
   font-size: small;
   text-align: right;
   color: #999;
 }
-  #testimonials article footer a, #errata article footer a {
+  #testimonials article footer p, #errata article footer p, #features article footer p {
+    margin-top: 0;
+  }
+  #testimonials article footer a, #errata article footer a, #features article footer a {
     font-weight: normal;
   }
 
