@@ -1,5 +1,5 @@
 ---
-from: "Bugzmanov"
+from: "Bugzmanov on goodreads"
 source: https://www.goodreads.com/review/show/4036692838
 weight: 1
 date: 2021-12-12

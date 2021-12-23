@@ -1,5 +1,5 @@
 ---
-from: "Martin Ombura Jr."
+from: "Martin Ombura Jr. on twitter"
 source: https://twitter.com/martinomburajr/status/1460310387132444683
 weight: 1
 date: 2021-11-15

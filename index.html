@@ -18,21 +18,23 @@ of other retailers</a>.
 
 <section id="testimonials">
 <h2>What readers say</h2>
+<div>
 {% for t in site.testimonials reversed %}
 <article class="testimonial">
-{{ t.content | markdownify }}
+<div>{{ t.content | markdownify }}</div>
 <footer><p><a href="{{ t.source }}">{{ t.from }}</a></p></footer>
 </article>
 {% endfor %}
+</div>
 </section>
 
-<section id="features">
+<section id="more">
 <h2>More about the book</h2>
 {% capture featured %}{% include featured.md %}{% endcapture %}
 {{ featured | markdownify }}
+</section>
 
-<p><a href="#errata">Errata for the book is listed further down on this page.</a></p>
-
+<section id="features">
 <h2>Rotating list of interesting stuff</h2>
 {% for feature in site.features reversed %}
 <article class="feature">
@@ -45,8 +47,8 @@ of other retailers</a>.
 <h2>Errata</h2>
 {% for error in site.errata %}
 <article class="error">
-<h3>Page {{ error.page }} (chapter {{ error.chapter }})</h3>
-{{ error.content | markdownify }}
+<h3>p{{ error.page }} (ch. {{ error.chapter }})</h3>
+<div>{{ error.content | markdownify }}</div>
 <footer><p>
 {% if error.source %}
 <a href="{{ error.source }}">

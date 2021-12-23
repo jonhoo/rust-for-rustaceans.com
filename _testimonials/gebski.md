@@ -1,5 +1,5 @@
 ---
-from: "Sebastian Gebski"
+from: "Sebastian Gebski on goodreads"
 source: https://www.goodreads.com/review/show/4281366819
 weight: 1
 date: 2021-10-24

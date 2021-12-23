@@ -87,13 +87,17 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/* Fonts */
+html {
+  font-family: sans-serif;
+}
+
 /* Layout */
 
 body {
   display: grid;
   grid-column-gap: 2em;
   grid-auto-columns: minmax(0, 1.5fr) minmax(0, 3fr) minmax(0, 2fr);
-  grid-auto-rows: calc(100vh - 2em) auto;
   grid-auto-flow: column;
   border-top: 2em solid #8a2a2f;
   min-height: 100vh;
@@ -107,6 +111,20 @@ body {
   padding: 2em 3em;
 }
 #testimonials {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  padding-top: 2em;
+}
+#more {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  padding-top: 2em;
+}
+#features {
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 1;
@@ -114,18 +132,11 @@ body {
   padding: 2em 0;
   padding-right: 2em;
 }
-#features {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  padding-top: 2em;
-}
 #errata {
   grid-column-start: 2;
   grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
   padding-top: 2em;
   padding-right: 2em;
 }
@@ -135,12 +146,11 @@ body {
 h2 {
   padding: .5em 1em;
   font-size: 1em;
-  font-family: sans-serif;
   text-align: center;
-  border-bottom: 2px solid #f6e55c;
+  border-bottom: .5em solid #f6e55c;
 }
-section h2 ~ h2 {
-  margin-top: 3em;
+#testimonials h2, #errata h2 {
+  margin-top: 2em;
 }
 a {
   color: inherit;
@@ -177,8 +187,28 @@ a {
   padding-left: 1em;
 }
 
-#testimonials article + article, #errata article + article {
-  border-top: 1px solid #f6e55c;
+#testimonials > div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 1em 2em;
+}
+  #testimonials article {
+    max-width: 1fr;
+    flex: 1 1 17em;
+    display: flex;
+    flex-flow: column;
+  }
+  #testimonials article > div {
+    flex-grow: 1;
+  }
+  #testimonials footer p {
+    margin-top: 0;
+  }
+
+#errata article {
+  border-bottom: 1px solid #f6e55c;
 }
 #testimonials article footer, #errata article footer {
   padding: .2em .5em;
@@ -192,10 +222,12 @@ a {
 
 #errata h3 {
   font-size: 1em;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 1em;
+  color: #888;
 }
+  #errata article > div {
+    padding: .5em 1em;
+    background: #fafafa;
+  }
 
 
 
