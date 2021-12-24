@@ -232,6 +232,10 @@ a {
   border: 1px solid #888;
 }
 
+pre {
+  overflow-x: auto;
+}
+
 
 
 /* 8a2a2f */
