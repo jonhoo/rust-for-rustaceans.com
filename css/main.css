@@ -364,7 +364,7 @@ pre {
     grid-row-gap: 1em;
     grid-auto-columns: 20em minmax(0, 1fr);
     grid-auto-flow: column;
-    border-bottom: 100vh #fffcc5 solid;
+    border-bottom: 20px #fffcc5 solid;
   }
   section {
     padding: 0;
