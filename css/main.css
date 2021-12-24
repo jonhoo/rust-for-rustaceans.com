@@ -193,6 +193,14 @@ a {
   #testimonials article > div {
     flex-grow: 1;
   }
+  #testimonials article > div {
+    background: #fafafa;
+    border: 1px solid #eee;
+    padding: 0 1em;
+  }
+  #testimonials article footer p::before {
+    content: "— ";
+  }
 
 #errata article {
   border-bottom: 1px solid #f6e55c;
