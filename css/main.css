@@ -364,6 +364,7 @@ pre {
     grid-row-gap: 1em;
     grid-auto-columns: 20em minmax(0, 1fr);
     grid-auto-flow: column;
+    /* https://www.tbray.org/ongoing/When/201x/2011/11/26/Misscrolling */
     border-bottom: 100vh #fffcc5 solid;
   }
   section {
