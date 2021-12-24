@@ -223,7 +223,23 @@ a {
   font-size: 1em;
   color: #888;
   position: relative;
+  /* for nicer anchoring */
+  padding-top: 1em;
+  margin-top: 0;
 }
+  #errata h3:target {
+    color: red;
+  }
+  #errata h3:target::before {
+    content: "»";
+    position: absolute;
+    left: -17px;
+    padding-right: 10px;
+  }
+  #errata h3:target::after {
+    content: "«";
+    padding-left: 1ex;
+  }
   #errata h3 a:hover::before {
     position: absolute;
     left: -25px;
