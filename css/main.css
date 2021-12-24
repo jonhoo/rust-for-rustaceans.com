@@ -97,8 +97,27 @@ html {
 body {
   min-height: 100vh;
   box-sizing: border-box;
-  border-top: 1em solid #8a2a2f;
+  border-top: 2em solid #8a2a2f;
 }
+body > nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2em;
+  line-height: 2em;
+  text-align: right;
+  color: white;
+  text-transform: lowercase;
+  padding-right: 2em;
+}
+  body > nav::before {
+    content: "jump to: ";
+  }
+  body nav a:not(:last-of-type)::after {
+    content: " / ";
+    font-weight: normal;
+  }
 section {
   padding: 1em;
 }
@@ -207,6 +226,11 @@ a {
     padding: .5em 1em;
     background: #fafafa;
   }
+#errata-note {
+  background: #eee;
+  padding: 1em;
+  border: 1px solid #888;
+}
 
 
 
@@ -312,7 +336,6 @@ a {
     grid-row-gap: 1em;
     grid-auto-columns: 20em minmax(0, 1fr);
     grid-auto-flow: column;
-    border-top-width: 2em;
     border-bottom: 100vh #fffcc5 solid;
   }
   section {
@@ -384,6 +407,12 @@ a {
     grid-row-start: 1;
     grid-row-end: 2;
   }
+  #features-link {
+    display: none;
+  }
+    #features-link::after {
+      display: none;
+    }
   #features {
     grid-column-start: 3;
     grid-column-end: 4;
