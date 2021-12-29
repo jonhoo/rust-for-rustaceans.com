@@ -9,23 +9,19 @@ date: 2021-12-27
 Listing 13-3 says
 
 ```rust
-...
-    impl Drop for DropGuard<'_> {
-        fn drop(&mut self) {
-            lock.store(true, Ordering::Release);
-        }
+impl Drop for DropGuard<'_> {
+    fn drop(&mut self) {
+        lock.store(true, Ordering::Release);
     }
-...
+}
 ```
 
 but should say
 
 ```rust
-...
-    impl Drop for DropGuard<'_> {
-        fn drop(&mut self) {
-            self.0.store(true, Ordering::Release);
-        }
+impl Drop for DropGuard<'_> {
+    fn drop(&mut self) {
+        self.0.store(true, Ordering::Release);
     }
-...
+}
 ```
