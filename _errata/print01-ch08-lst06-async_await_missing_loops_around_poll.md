@@ -2,6 +2,7 @@
 chapter: 8
 kind: code
 reporter: ilya-epifanov
+page: 125
 date: 2022-01-09
 # fixed: 2021-01-01
 ---
