@@ -18,8 +18,8 @@ Branch / Commit / PR name: "errata print01-ch{nn}-lst{nn} syntax error in exampl
 ---
 chapter: 7
 page: 103
-kind: code/typo
-reporter: Your name/any identifier you may prefer
+kind: code
+reporter: Jon Gjengset
 date: 2022-01-09
 ---
 
@@ -43,3 +43,15 @@ macro_rules! test_battery {
 }
 ```
 ````
+
+Note:
+
+- `reporter` can be any identifier you wish, such as
+  - a name or nickname (ex: Jon Gjengset)
+  - a username or handle (ex: @jonhoo)
+  - perhaps an email, url, etc
+- `kind` may be one of
+  - `code`
+  - `inaccuracy`
+  - `grammar`
+  - `typo`
