@@ -2,7 +2,7 @@
 chapter: 13
 page: 235
 kind: code
-reporter: monoid
+reporter: monoid/necabo
 date: 2021-12-27
 # fixed: 2021-01-01
 ---
@@ -21,7 +21,7 @@ but should say
 ```rust
 impl Drop for DropGuard<'_> {
     fn drop(&mut self) {
-        self.0.store(true, Ordering::Release);
+        self.0.store(false, Ordering::Release);
     }
 }
 ```
