@@ -5,7 +5,7 @@ weight: 1
 date: 2021-12-25
 ---
 This is a great book, advancing your knowledge beyond all of the
-beginner books. [&helip;] "Rust for Rustaceans" is just what we need
+beginner books. […] "Rust for Rustaceans" is just what we need
 next, a book that covers numerous intermediate topics in a coherent and
 instructive way. It shows not the mechanics of the language as beginner
 books do, but the hows and whys of how to actually use Rust, how to
