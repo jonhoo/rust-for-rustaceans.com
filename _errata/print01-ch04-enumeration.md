@@ -6,6 +6,6 @@ reporter: styvane
 date: 2022-07-17
 ---
 
-In the third paragraph, "[...] to provide the caller with as much information about went wrong as possible."
+The second to last paragraph is missing the word "what". It should read:
 
-It should probably say "[...] to provide the caller with as much information about "what" went wrong as possible."
+ > … to provide the caller with as much information about **what** went wrong as possible.
