@@ -1,0 +1,12 @@
+---
+chapter: 11
+page: 197
+kind: typo
+reporter: david-perez
+date: 2022-08-29
+# fixed: 2021-01-01
+---
+The fourth sentence of the "Link Kinds" section has an extra space before a
+comma. It says "[...] the binary produced by the compiler , and thus [...]",
+but should instead read "[...] the binary produced by the compiler, and thus
+[...]".
