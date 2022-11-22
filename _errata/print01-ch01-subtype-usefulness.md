@@ -2,7 +2,7 @@
 chapter: 1
 page: 16
 kind: inaccuracy
-reporter: @korkje
+reporter: korkje
 date: 2022-11-09
 ---
 
