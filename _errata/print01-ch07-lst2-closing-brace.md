@@ -25,5 +25,5 @@ test_battery! {
   u8 as u8_tests,
   // ...
   i128 as i128_tests
-}
+};
 ```
