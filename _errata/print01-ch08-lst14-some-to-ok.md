@@ -14,7 +14,7 @@ async fn handle_client(socket: TcpStream) -> Result<()> {
 }
 
 async fn server(socket: TcpListener) -> Result<()> {
-    while let Some() = socket.accept().await? {
+    while let Some(stream) = socket.accept().await? {
         handle_client(stream).await?;
     }
 }
