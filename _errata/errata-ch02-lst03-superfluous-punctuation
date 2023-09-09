@@ -1,5 +1,4 @@
 ---
-printing: second
 chapter: 1
 page: 27
 kind: code
@@ -26,5 +25,3 @@ impl String {
     }
 }
 ```
-
-Resolves #39
