@@ -1,0 +1,1045 @@
+<!doctype html>
+<html class="no-js" lang="en" itemscope itemtype="https://schema.org/Book">
+
+<head>
+  <meta charset="utf-8">
+  <title>Rust for Rustaceans by Jon Gjengset</title>
+  <meta name="description" itemprop="description" content="For developers who’ve mastered the basics, this book is the next step on your way to professional-level programming in Rust. It covers everything you need to build and maintain larger code bases, write powerful and flexible applications and libraries, and confidently expand the scope and complexity">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" itemprop="name" content="Rust for Rustaceans">
+  <meta property="og:type" content="book">
+  <meta property="og:url" content="https://rust-for-rustaceans.com" />
+  <meta property="og:image" itemprop="image" content="https://rust-for-rustaceans.com/RustforRustaceans_cover.png">
+  <meta property="og:book:author" content="Jon Gjengset">
+  <link rel="author" href="https://thesquareplanet.com">
+  <meta property="og:book:isbn" itemprop="isbn" content="9781718501850">
+  <meta itemprop="numberOfPages" content="280">
+  <meta property="og:book:release_date" content="2021-11-12">
+  <meta property="og:book:tag" content="rust">
+  <meta property="og:book:tag" content="rustlang">
+  <meta property="og:book:tag" content="programming">
+  <link rel="publisher" href="https://nostarch.com/">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@jonhoo" />
+  <meta name="twitter:creator" content="@jonhoo" />
+  <meta name="twitter:image" content="https://rust-for-rustaceans.com/RustforRustaceans_cover.png">
+
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link rel="canonical" href="https://rust-for-rustaceans.com/">
+  <link rel="alternate" type="application/rss+xml" title="Rust for Rustaceans by Jon Gjengset" href="https://rust-for-rustaceans.com/feed.xml">
+
+  <meta name="theme-color" content="#fffcc5">
+</head>
+
+<body>
+
+  <nav>
+  <a href="#features" id="features-link">updates since release</a>
+  <a href="#errata">errata</a>
+</nav>
+
+<section id="book">
+<img src="https://rust-for-rustaceans.com/RustforRustaceans_cover.png" alt="Rust for Rustaceans book cover" id="cover">
+<h1>Rust for Rustaceans by Jon Gjengset</h1>
+<p>For developers who’ve mastered the basics, this book is the next step on your way to professional-level programming in Rust. It covers everything you need to build and maintain larger code bases, write powerful and flexible applications and libraries, and confidently expand the scope and complexity</p>
+
+<p>
+You can buy the book <a href="https://nostarch.com/rust-rustaceans">directly
+from the publisher</a>, which nets you the ebook for free if you get
+the print book, or you can get it from <a
+href="https://smile.amazon.com/dp/1718501854">Amazon</a> or a <a
+href="https://www.google.com/shopping/product/1147408932313014600/offers">number
+of other retailers</a>.
+</section>
+
+<section id="more">
+<h2>More about the book</h2>
+
+<p>You can hear Jon talk about the book on the <a href="https://soundcloud.com/arewepodcastyet/awpy-08-jon-ferdinand-ronge-gjengset">Are We Podcast Yet podcast</a>
+as well as on <a href="https://rustacean-station.org/episode/038-jon-gjengset/">Rustacean Station</a>. No Starch (the publisher) also
+conducted a <a href="https://nostarch.com/blog/jon-gjengset-talks-rust">longer text-based interview</a>. If you’re after a
+quick survey of Jon’s writing process, give his <a href="https://writeswith.com/interviews/jon-gjengset/">Writes With interview</a>
+a read.</p>
+<p>Errata for the book is listed <a href="#errata">further down on this page</a>.</p>
+
+</section>
+
+<section id="testimonials">
+<h2>What readers say</h2>
+<div>
+
+<article class="testimonial">
+<div><p>If you’ve read [The Rust Programming Language] and want to know where to go next, I highly recommend picking up Rust for Rustaceans.</p>
+<p>I am so glad this book exists.</p>
+</div>
+<footer><p><a href="https://twitter.com/steveklabnik/status/1443250553958682627">Steve Klabnik on twitter</a></p></footer>
+</article>
+
+<article class="testimonial">
+<div><p>I pretty much hate every piece of content i read about rust. its either
+extremely muddle down with beginner topics mixed in or is just so
+pretentious it hurts</p>
+<p>Rust for Rustaceans is not the case. Its a great book. HIGHLY recommend.</p>
+</div>
+<footer><p><a href="https://twitter.com/ThePrimeagen/status/1519147460173647872">ThePrimeagen on twitter</a></p></footer>
+</article>
+
+<article class="testimonial">
+<div><p>It’s a very dense book. It’s light on code, no pictures. Top to bottom
+of just text. It doesn’t have projects to follow along with, you don’t
+build anything, you don’t have practice exercises. I think it’s
+important to note that before anyone get this book. […]</p>
+<p>All said, it’s a great book and one of the very few programming-related
+book I’ve ever completely read from front to back.</p>
+</div>
+<footer><p><a href="https://www.reddit.com/r/rust/comments/vptd32/comment/ien4u0s/?utm_source=reddit&utm_medium=web2x&context=3">DevRW on reddit</a></p></footer>
+</article>
+
+<article class="testimonial">
+<div><p>Amazing resource to dive into the nitty-gritty details of how things
+work under the hood. The author has a great style of explaining these
+details without unnecessarily overcomplicating matters. I can see this
+becoming a classic for the ages.</p>
+</div>
+<footer><p><a href="https://www.goodreads.com/review/show/4798420490?book_show_action=false&from_review_page=1">Vishnu on Goodreads</a></p></footer>
+</article>
+
+<article class="testimonial">
+<div><p>Many of the more confusing language features are covered in-depth in a
+way that’s unlikely to go out of date, and a lot of what you’ll learn
+will help you in other programming languages as well. This book is
+fairly dense, but by the end you should be ready to tackle real-world
+projects in a way that might feel intimidating right now. Overall, it’s
+a must-buy for anyone who wants to take their rust knowledge from
+dabbling to professional.</p>
+</div>
+<footer><p><a href="https://smile.amazon.com/Rust-Rustaceans-Programming-Experienced-Developers/product-reviews/1718501854/ref=cm_cr_arp_d_viewopt_kywd?ie=UTF8&reviewerType=all_reviews&filterByStar=positive&pageNumber=1&filterByKeyword=skill+floor">Laura Powles on Amazon</a></p></footer>
+</article>
+
+<article class="testimonial">
+<div><p>This is a great book, advancing your knowledge beyond all of the
+beginner books. […] “Rust for Rustaceans” is just what we need
+next, a book that covers numerous intermediate topics in a coherent and
+instructive way. It shows not the mechanics of the language as beginner
+books do, but the hows and whys of how to actually use Rust, how to
+think about writing code in Rust, and how to understand how to work with
+Rust.</p>
+</div>
+<footer><p><a href="https://smile.amazon.com/gp/customer-reviews/R3KC4MAN8XGC93/ref=cm_cr_othr_d_rvw_ttl?ie=UTF8&ASIN=1718501854">Gary Boone on Amazon</a></p></footer>
+</article>
+
+<article class="testimonial">
+<div><p>I am enjoying digging into “Rust for Rustaceans” by @jonhoo. It’s slender and full of insight.</p>
+</div>
+<footer><p><a href="https://twitter.com/dylanmc/status/1473329613459779585">Dylan McNamee on twitter</a></p></footer>
+</article>
+
+<article class="testimonial">
+<div><p>I can’t say that this book blew my mind, but it has a unique position - it targets people who already know rust and want to level up. And it delivers. If you don’t know rust it will be pretty much inaccessible, but if you - it’s a joy to read. […]</p>
+</div>
+<footer><p><a href="https://www.goodreads.com/review/show/4036692838">Bugzmanov on goodreads</a></p></footer>
+</article>
+
+<article class="testimonial">
+<div><p>I recently bought @jonhoo’s Rust for Rustaceans and wow am I impressed. In the <em>first chapter</em> he managed to teach me something I thought I knew, and better than any other explanations I’ve seen (subtyping and variance). 9.99/10, lost .01 point cause ferris kinda creepy /j</p>
+</div>
+<footer><p><a href="https://twitter.com/BinSlashBash/status/1466088859008217096">James on twitter</a></p></footer>
+</article>
+
+<article class="testimonial">
+<div><p>Just read the first chapter of Rust for Rustaceans by @jonhoo.</p>
+<p>Even though most of the topics were familiar, I’ve picked up on so many new ways to conceptualize topics such as lifetimes and borrowing.</p>
+<p>Can’t wait to study the entire book 🦀.</p>
+</div>
+<footer><p><a href="https://twitter.com/martinomburajr/status/1460310387132444683">Martin Ombura Jr. on twitter</a></p></footer>
+</article>
+
+<article class="testimonial">
+<div><p>It’s probably the only book on Rust for non-beginners (which kinda puts some pressure, doesn’t it? ;&gt;). Fortunately - it’s good, even very good. […]</p>
+</div>
+<footer><p><a href="https://www.goodreads.com/review/show/4281366819">Sebastian Gebski on goodreads</a></p></footer>
+</article>
+
+<article class="testimonial">
+<div><p>Finished “Rust For Rustaceans” and it’s a <em>remarkable</em> work. Perfect to elevate your education/inspiration after consuming some of the abundant intro material. It’s also so well written and erudite to be rewarding even for the most advanced of 🦀 users. Hats off to @jonhoo!</p>
+</div>
+<footer><p><a href="https://twitter.com/AndreaPessino/status/1451288533642080297">Andrea Pessino on twitter</a></p></footer>
+</article>
+
+<article class="testimonial">
+<div><p>Reading @jonhoo‘s book Rust for Rustaceans, and barely two chapters in and it’s already one of the best intermediate to advanced Rust learning material I’ve come across.</p>
+</div>
+<footer><p><a href="https://twitter.com/2093bps/status/1449941897246613504">@2093bps on twitter</a></p></footer>
+</article>
+
+<article class="testimonial">
+<div><p>I was on a long flight during it picked up @jonhoo Rust for rustaceans oh boy what a read that was. I understood lots of concepts related to compiler memory layouts byte alignment etc…A worth read of the book for every programmer.</p>
+</div>
+<footer><p><a href="https://twitter.com/kesavkolla/status/1405544550232301576">@kesavkolla on twitter</a></p></footer>
+</article>
+
+</div>
+</section>
+
+<section id="features">
+<h2>Updates since the book's release</h2>
+
+<article class="feature">
+<p>The book doesn’t really talk about <code>unwrap</code> and <code>expect</code>, and doesn’t
+give guidance on when they are and aren’t appropriate. One day it
+probably will, and it likely look a lot like Andrew Gallant’s
+recommendations in his excellent “<a href="https://blog.burntsushi.net/unwrap/">Using unwrap() in Rust is
+Okay</a>” blog post.</p>
+
+
+<footer>
+
+<p>» See also page 64 (chapter 4), "Propagating Errors".<p>
+
+
+</article>
+
+<article class="feature">
+<p><a href="https://matklad.github.io/">matklad’s blog</a> is an excellent resource
+for great and concise Rust advice and tricks. See, in particular, the
+<a href="https://matklad.github.io/2021/09/05/Rust100k.html">One Hundred Lines of Rust
+series</a>.</p>
+
+
+<footer>
+
+<p>» See also page 241 (chapter 13), "Learn by Reading".<p>
+
+
+</article>
+
+<article class="feature">
+<p>A while ago, Julio Merino proposed <a href="https://jmmv.dev/2020/12/builder-pattern-for-tests.html">using the builder pattern to define
+test
+scenarios</a>,
+which I think is a <em>great</em> idea. In a future edition of the book I’d
+probably include a section in the testing chapter on “test patterns”,
+where that strategy would certainly feature.</p>
+
+
+<footer>
+
+<p>» See also page 92 (chapter 6), "Additional Testing Tools".<p>
+
+
+</article>
+
+<article class="feature">
+<p>The <a href="https://rust-unofficial.github.io/patterns/intro.html">Rust Design Patterns
+book</a> is a great
+read if you’re looking for quick tips on idiomatic Rust-isms.</p>
+
+
+<footer>
+
+<p>» See also page 241 (chapter 13), "Learn by Reading".<p>
+
+
+</article>
+
+<article class="feature">
+<p><a href="https://github.com/rust-lang/rust/issues/65262"><abbr title="Minimum Supported Rust Version">MSRV</abbr> can now be set in <code>Cargo.toml</code></a>.</p>
+
+
+<footer>
+
+<p>» See also page 81 (chapter 5), "Minimum Supported Rust Version".<p>
+
+
+</article>
+
+<article class="feature">
+<p><a href="https://github.com/rust-lang/rust/pull/89596"><code>#[cfg]</code> now implies <code>#[doc(cfg)]</code></a>,
+though note that <a href="https://github.com/rust-lang/rust/issues/43781"><code>#[doc]</code> is still unstable</a>.</p>
+
+
+<footer>
+
+<p>» See also page 78 (chapter 5), "Conditional Compilation".<p>
+
+
+</article>
+
+<article class="feature">
+<p>Asynchronous streams in the standard library <a href="https://github.com/rust-lang/rfcs/pull/3208">will likely be called
+<code>AsyncIterator</code></a>.</p>
+
+
+<footer>
+
+<p>» See also page 124 (chapter 8), "NOTE: You may have noticed …".<p>
+
+
+</article>
+
+<article class="feature">
+<p><a href="https://github.com/foresterre/cargo-msrv"><code>cargo-msrv</code></a> is a super handy tool for finding the minimum supported
+Rust version (MSRV) for a crate.</p>
+
+
+<footer>
+
+<p>» See also page 81 (chapter 5), "Minimum Supported Rust Version".<p>
+
+<p>» See also page 224 (chapter 13), "Tools".<p>
+
+
+</article>
+
+<article class="feature">
+<p><a href="https://insta.rs/"><code>insta</code></a> is a really neat library for doing snapshot testing.</p>
+
+
+<footer>
+
+<p>» See also page 225 (chapter 13), "Libraries".<p>
+
+
+</article>
+
+</section>
+
+<section id="errata">
+<h2>Errata</h2>
+<p id="errata-note">
+If you spot what you believe to be an error in the book, please submit a PR
+adding it to the <code>_errata</code> folder in
+<a href="https://github.com/jonhoo/rust-for-rustaceans.com">the repository for this site</a>
+(<a href="https://github.com/jonhoo/rust-for-rustaceans.com/pull/2">example</a>).
+</p>
+
+<article class="error">
+<h3 id="errata-print01-ch01-lst10-iterator-next-signature">
+<a href="#errata-print01-ch01-lst10-iterator-next-signature">p15 (ch. 1)</a>
+</h3>
+<div><p>Listing 1-10 uses the signature</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">fn</span> <span class="nf">next</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">Option</span><span class="o">&lt;</span><span class="k">Self</span><span class="p">::</span><span class="n">Item</span><span class="o">&gt;</span>
+</code></pre></div></div>
+<p>for <code>Iterator::next</code>, but it should be</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">fn</span> <span class="nf">next</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">Option</span><span class="o">&lt;</span><span class="k">Self</span><span class="p">::</span><span class="n">Item</span><span class="o">&gt;</span>
+</code></pre></div></div>
+</div>
+<footer><p>
+
+  Reported by Ihor Taranenko on Aug  7, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch01-variance-tick-a">
+<a href="#errata-print01-ch01-variance-tick-a">p16 (ch. 1)</a>
+</h3>
+<div><p>This page should have a note between the second and third paragraph that
+reads</p>
+<blockquote>
+<p>The <code>'a</code> in the example types listed here do not refer to a generic
+lifetime gathered from <code>&lt;'a&gt;</code>. Instead, it refers to some <em>concrete</em>
+lifetime that is not <code>'static</code>, such as that assigned to the type of
+<code>x</code> in a statement such as <code>let x = &amp;some_variable</code>.</p>
+</blockquote>
+</div>
+<footer><p>
+
+  Reported by Chris00 on Aug 13, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch01-variance">
+<a href="#errata-print01-ch01-variance">p16 (ch. 1)</a>
+</h3>
+<div><p>The sentence that starts “All types have a variance” should instead
+read:</p>
+<blockquote>
+<p>All types with generic parameters (be they lifetime or type
+parameters) have a variance with respect to those parameters. That
+variance defines what …</p>
+</blockquote>
+<p>Types with no generic parameters do not “have a variance”. Variance is
+always defined in relation to a parameter.</p>
+</div>
+<footer><p>
+
+  Reported by Chris00 on Aug 13, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch01-subtype-usefulness">
+<a href="#errata-print01-ch01-subtype-usefulness">p16 (ch. 1)</a>
+</h3>
+<div><p>The page starts out saying</p>
+<blockquote>
+<p>a <code>Turtle</code> is more “useful” than some unspecified <code>Animal</code></p>
+</blockquote>
+<p>in reference to <code>Turtle</code> being a subtype of <code>Animal</code>. It is more accurate to say</p>
+<blockquote>
+<p>a <code>Turtle</code> is <em>at least as</em> “useful” <em>as</em> some unspecified <code>Animal</code></p>
+</blockquote>
+<p>as it <em>may</em> be of no more use than <code>Animal</code>.</p>
+</div>
+<footer><p>
+
+  Reported by korkje on Nov  9, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch01-lifetime-variance-list">
+<a href="#errata-print01-ch01-lifetime-variance-list">p17 (ch. 1)</a>
+</h3>
+<div><p>The end of the penultimate paragraph reads “[…] and it reports that the list
+is still mutably borrowed.” There is no list in this example. It should say
+“[…] and it reports that <code>s</code> is still mutably borrowed.”</p>
+</div>
+<footer><p>
+
+  Reported by david-perez on Dec 24, 2021.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch02-innerfunctions-instead">
+<a href="#errata-print01-ch02-innerfunctions-instead">p26 (ch. 2)</a>
+</h3>
+<div><p>In the “non-generic inner functions” info box in the “traits and trait
+bounds” section, the phrase “you can instead declare such a helper
+function outside the method instead” contains the word “instead” twice.</p>
+</div>
+<footer><p>
+
+<a href="https://discord.com/channels/234804991343198210/722213284744265790/895745597175369729">
+
+  Reported by nerosnm on Oct  7, 2021.
+
+</a>
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch02-compilation-and-dispatch-find">
+<a href="#errata-print01-ch02-compilation-and-dispatch-find">p27 (ch. 2)</a>
+</h3>
+<div><p>In the last paragraph “[…] all the compiler can do for <code>find</code> in Listing 2-2 […]”:
+Listing 2-2 does not have a <code>find</code> function. It should say “[…] all the compiler can do for <code>contains</code> in Listing 2-2 […]” .</p>
+</div>
+<footer><p>
+
+  Reported by weigangd on Jan 12, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch02-lst03-superfluous-punctuation">
+<a href="#errata-print01-ch02-lst03-superfluous-punctuation">p27 (ch. 1)</a>
+</h3>
+<div><p>Listing 2-3 reads:</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">impl</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">contains</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="o">&amp;</span><span class="k">dyn</span> <span class="n">Pattern</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">bool</span> <span class="p">{</span>
+        <span class="n">p</span><span class="nf">.is_contained_in</span><span class="p">(</span><span class="o">&amp;*</span><span class="k">self</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>The <code>&amp;*</code> before <code>self</code> has no effect and should be removed. The listing would then read:</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">impl</span> <span class="nb">String</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="k">fn</span> <span class="nf">contains</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="o">&amp;</span><span class="k">dyn</span> <span class="n">Pattern</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">bool</span> <span class="p">{</span>
+        <span class="n">p</span><span class="nf">.is_contained_in</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</div>
+<footer><p>
+
+  Reported by Kyle Strand on Aug 27, 2023.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch02-covered-impl">
+<a href="#errata-print01-ch02-covered-impl">p30 (ch. 2)</a>
+</h3>
+<div><p>In <code>impl&lt;P1..=Pn&gt; ForeignTrait&lt;T1..=Tn&gt; for T0</code>, <code>Tn</code> should be <code>Tm</code>
+since there isn’t a requirement that the number of generic type
+parameters matches the number of generic parameters of <code>ForeignTrait</code>.</p>
+<p>Interestingly enough, the RFC <a href="https://rust-lang.github.io/rfcs/2451-re-rebalancing-coherence.html#concrete-orphan-rules">uses <code>Tn</code></a>, though I couldn’t find
+any rationale for why, and it is almost certainly just a typo. See also
+<a href="https://github.com/jonhoo/rust-for-rustaceans.com/pull/24">this discussion</a>.</p>
+</div>
+<footer><p>
+
+  Reported by Chris00 on Aug 13, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch03-deref-inheritance">
+<a href="#errata-print01-ch03-deref-inheritance">p40 (ch. 3)</a>
+</h3>
+<div><p>The “Wrapper Types” section suggests that <code>Deref</code> functions <em>a little
+like</em> inheritance, which may mislead readers to using it to emulate OO
+in Rust, which is <a href="https://rust-unofficial.github.io/patterns/anti_patterns/deref.html">a bad idea</a>. At the time of writing, the API
+guidelines <a href="https://rust-lang.github.io/api-guidelines/predictability.html#only-smart-pointers-implement-deref-and-derefmut-c-deref">recommend</a> only using <code>Deref</code> for smart pointer types (see
+also <a href="https://stackoverflow.com/questions/45086595/is-it-considered-a-bad-practice-to-implement-deref-for-newtypes">this SO answer</a>), though <a href="https://github.com/rust-lang/api-guidelines/issues/249">this may change</a> to apply more broadly
+to is-a newtypes, which is what the book should also recommend.</p>
+</div>
+<footer><p>
+
+  Reported by alex_xiong_ on Dec  4, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch03-deref-self">
+<a href="#errata-print01-ch03-deref-self">p41 (ch. 3)</a>
+</h3>
+<div><p>The box “Deref and Inherent Methods” should say</p>
+<blockquote>
+<p>methods on <code>T</code> that take <code>&amp;self</code></p>
+</blockquote>
+<p>That is, it should say <code>&amp;self</code> rather than <code>self</code> to match the actual
+definition of the <code>Deref</code> trait.</p>
+<p>The box should also mention <code>DerefMut</code> and <code>AsRef</code>, both of which have
+the same auto-dereference behavior.</p>
+</div>
+<footer><p>
+
+  Reported by Chris00 on Aug 13, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch03-from-utf8-lossy">
+<a href="#errata-print01-ch03-from-utf8-lossy">p45 (ch. 3)</a>
+</h3>
+<div><p>The sentence “For example, <code>String::from_utf8_lossy</code> needs to take ownership of
+the byte sequence that is passed to it only if it contains invalid UTF-8
+sequences.” in the fourth paragraph of the “Borrowed vs. Owned” section is
+inaccurate.
+<a href="https://doc.rust-lang.org/stable/std/string/struct.String.html#method.from_utf8_lossy"><code>String::from_utf8_lossy</code></a>
+<em>never</em> takes ownership of the input byte sequence. What it does is it
+leverages <code>Cow&lt;'a, str&gt;</code> to either return the same input bytes reinterpreted as
+a string slice if they are valid UTF-8, or clone only the valid UTF-8 sequences
+into a newly-allocated <code>String</code> otherwise.</p>
+<p>The paragraph in question should be replaced with:</p>
+<blockquote>
+<p>Sometimes, you don’t know if your code must own data or not, as it is
+runtime dependent. For this, the <code>Cow</code> type is your friend. It lets
+you represent data that <em>may</em> be owned by holding either a reference
+or an owned value. If asked to produce an owned value when it only has
+a reference, a <code>Cow</code> uses the <code>ToOwned</code> trait to make one behind the
+scenes, usually by cloning. <code>Cow</code> is typically used in return types to
+represent functions that sometimes allocate. For example,
+<code>String::from_utf8_lossy</code> allocates only if the input contains invalid
+UTF-8. <code>Cow</code> can also be used in arguments for functions that can
+sometimes make use of owned inputs, but that’s rarer in practice.</p>
+</blockquote>
+</div>
+<footer><p>
+
+  Reported by david-perez on Dec 26, 2021.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch03-indicate-missing-bodies">
+<a href="#errata-print01-ch03-indicate-missing-bodies">p49 (ch. 3)</a>
+</h3>
+<div><p>The contents of the <code>impl Default</code> block at (3), as well as the body of
+the various methods in the following <code>impl</code> blocks, have all been
+elided. This was done for clarity, but the elided items should be
+indicated with … within each of the currently-empty <code>{}</code> to indicate
+that this is the case.</p>
+</div>
+<footer><p>
+
+  Reported by Tom on Mar  4, 2023.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch04-enumeration">
+<a href="#errata-print01-ch04-enumeration">p58 (ch. 4)</a>
+</h3>
+<div><p>The second to last paragraph is missing the word “what”. It should read:</p>
+<blockquote>
+<p>… to provide the caller with as much information about <strong>what</strong> went wrong as possible.</p>
+</blockquote>
+</div>
+<footer><p>
+
+  Reported by styvane on Jul 17, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch05-if-cfg-some-feature">
+<a href="#errata-print01-ch05-if-cfg-some-feature">p70 (ch. 5)</a>
+</h3>
+<div><p>The last sentence of the second paragraph says</p>
+<blockquote>
+<p>Similarly, <code>if cfg!(feature = &quot;some-feature&quot;)</code> is equivalent to <code>if true</code> only if the <code>derive</code> feature is enabled</p>
+</blockquote>
+<p>but it should say</p>
+<blockquote>
+<p>Similarly, <code>if cfg!(feature = &quot;some-feature&quot;)</code> is equivalent to <code>if true</code> only if the <code>some-feature</code> feature is enabled</p>
+</blockquote>
+</div>
+<footer><p>
+
+  Reported by Joel Posti on Aug 14, 2023.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch06-buckets-visibility">
+<a href="#errata-print01-ch06-buckets-visibility">p89 (ch. 6)</a>
+</h3>
+<div><p>The second sentence of the second paragraph says:</p>
+<blockquote>
+<p>We could fix this by making the <code>buckets</code> field visibility <code>pub(crate)</code></p>
+</blockquote>
+<p>Which is accurate, but hard to follow. It should instead say:</p>
+<blockquote>
+<p>We could fix this by setting the visibility of the <code>buckets</code> field to <code>pub(crate)</code></p>
+</blockquote>
+</div>
+<footer><p>
+
+  Reported by Joel Posti on Sep 13, 2023.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch07-lst1-matcher">
+<a href="#errata-print01-ch07-lst1-matcher">p103 (ch. 7)</a>
+</h3>
+<div><p>Listing 7-1 has three closing parens</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="nd">macro_rules!</span> <span class="n">test_battery</span> <span class="p">{</span>
+  <span class="p">(</span><span class="nv">$</span><span class="p">(</span><span class="nv">$t:ty</span> <span class="k">as</span> <span class="nv">$name:ident</span><span class="p">),</span><span class="o">*</span><span class="p">))</span> <span class="k">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>but should have only two</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="nd">macro_rules!</span> <span class="n">test_battery</span> <span class="p">{</span>
+  <span class="p">(</span><span class="nv">$</span><span class="p">(</span><span class="nv">$t:ty</span> <span class="k">as</span> <span class="nv">$name:ident</span><span class="p">),</span><span class="o">*</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</div>
+<footer><p>
+
+  Reported by AJ ONeal on Jan  9, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch07-lst2-closing-brace">
+<a href="#errata-print01-ch07-lst2-closing-brace">p103 (ch. 7)</a>
+</h3>
+<div><p>Listing 7-2 closes the <code>test_battery</code> macro invocation with a closing paren and semicolon <code>);</code>:</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="o">...</span>
+<span class="nd">test_battery!</span> <span class="p">{</span>
+  <span class="nb">u8</span> <span class="k">as</span> <span class="n">u8_tests</span><span class="p">,</span>
+  <span class="c1">// ...</span>
+  <span class="nb">i128</span> <span class="k">as</span> <span class="n">i128_tests</span>
+<span class="p">);</span>
+</code></pre></div></div>
+<p>… instead of a closing brace <code>}</code>:</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="o">...</span>
+<span class="nd">test_battery!</span> <span class="p">{</span>
+  <span class="nb">u8</span> <span class="k">as</span> <span class="n">u8_tests</span><span class="p">,</span>
+  <span class="c1">// ...</span>
+  <span class="nb">i128</span> <span class="k">as</span> <span class="n">i128_tests</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</div>
+<footer><p>
+
+  Reported by nmarley on Jan  5, 2023.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch08-lst06-async-await-missing-loops-around-poll">
+<a href="#errata-print01-ch08-lst06-async-await-missing-loops-around-poll">p125 (ch. 8)</a>
+</h3>
+<div><p>Listing 8-6 says</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="n">generator</span> <span class="k">fn</span> <span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">rx</span><span class="p">:</span> <span class="n">Receiver</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">tx</span><span class="p">:</span> <span class="n">Sender</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">loop</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="k">mut</span> <span class="n">f</span> <span class="o">=</span> <span class="n">rx</span><span class="nf">.next</span><span class="p">();</span>
+        <span class="k">let</span> <span class="n">r</span> <span class="o">=</span> <span class="k">if</span> <span class="k">let</span> <span class="nn">Poll</span><span class="p">::</span><span class="nf">Ready</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">=</span> <span class="n">f</span><span class="nf">.poll</span><span class="p">()</span> <span class="p">{</span>
+            <span class="n">r</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">yield</span>
+        <span class="p">};</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nf">Some</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">=</span> <span class="n">r</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="k">mut</span> <span class="n">f</span> <span class="o">=</span> <span class="n">tx</span><span class="nf">.send</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+            <span class="k">let</span> <span class="n">_</span> <span class="o">=</span> <span class="k">if</span> <span class="k">let</span> <span class="nn">Poll</span><span class="p">::</span><span class="nf">Ready</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">=</span> <span class="n">f</span><span class="nf">.poll</span><span class="p">()</span> <span class="p">{</span>
+                <span class="n">r</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">yield</span>
+            <span class="p">};</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">break</span> <span class="nn">Poll</span><span class="p">::</span><span class="nf">Ready</span><span class="p">(());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>but is missing a <code>loop</code> around the call to <code>poll</code>. It should say</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="n">generator</span> <span class="k">fn</span> <span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">rx</span><span class="p">:</span> <span class="n">Receiver</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">tx</span><span class="p">:</span> <span class="n">Sender</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">loop</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="k">mut</span> <span class="n">f</span> <span class="o">=</span> <span class="n">rx</span><span class="nf">.next</span><span class="p">();</span>
+        <span class="k">let</span> <span class="n">r</span> <span class="o">=</span> <span class="k">loop</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nn">Poll</span><span class="p">::</span><span class="nf">Ready</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">=</span> <span class="n">f</span><span class="nf">.poll</span><span class="p">()</span> <span class="p">{</span>
+                <span class="k">break</span> <span class="n">r</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">yield</span>
+            <span class="p">}</span>
+        <span class="p">};</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nf">Some</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">=</span> <span class="n">r</span> <span class="p">{</span>
+            <span class="k">let</span> <span class="k">mut</span> <span class="n">f</span> <span class="o">=</span> <span class="n">tx</span><span class="nf">.send</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+            <span class="k">let</span> <span class="n">_</span> <span class="o">=</span> <span class="k">loop</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="k">let</span> <span class="nn">Poll</span><span class="p">::</span><span class="nf">Ready</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">=</span> <span class="n">f</span><span class="nf">.poll</span><span class="p">()</span> <span class="p">{</span>
+                    <span class="k">break</span> <span class="n">r</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">yield</span>
+                <span class="p">}</span>
+            <span class="p">};</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">break</span> <span class="nn">Poll</span><span class="p">::</span><span class="nf">Ready</span><span class="p">(());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</div>
+<footer><p>
+
+  Reported by ilya-epifanov on Jan  9, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch08-lst03-next-vs-receive">
+<a href="#errata-print01-ch08-lst03-next-vs-receive">p125 (ch. 8)</a>
+</h3>
+<div><p>The various listings and text in the sub-section “Ergonomic Futures” in
+chapter 8 uses <code>Receiver::next</code> and <code>Receiver::receive</code> interchangeably.
+This is confusing, since it means the text occasionally does not agree
+with the listed code (e.g., the last paragraph on page 125 refers to
+<code>Receiver::next</code> in Listing 8-4, which has no such call).</p>
+<p>There is no good reason for some of the listings to use one and others
+to use the other.</p>
+<p>The text and code should be updated such that every call to <code>.receive</code>
+and mention of <code>Receiver::receive</code> should be changed to <code>.next</code> and
+<code>Receiver::next</code> respectively. It should use <code>next</code> consistently as that
+is the generally agreed-upon convention for getting the next value from
+a stream (which <code>Receiver</code> represents).</p>
+</div>
+<footer><p>
+
+  Reported by jonhoo on Dec 17, 2023.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch08-pin-and-unpin-generator-listing">
+<a href="#errata-print01-ch08-pin-and-unpin-generator-listing">p126 (ch. 8)</a>
+</h3>
+<div><p>The fourth sentence of the “Pin and Unpin” section says “In the code from
+Listing 8-5, the future that <code>rx.next()</code> returns […]”. While technically
+correct, it should instead refer to Listing 8-6, since the rest of the
+paragraph is alluding to the desugared code of the generator.</p>
+</div>
+<footer><p>
+
+  Reported by david-perez on Aug 12, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch09-lst01-mut">
+<a href="#errata-print01-ch09-lst01-mut">p142 (ch. 9)</a>
+</h3>
+<div><p>Listing 9-1 says</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">impl</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">SomeType</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="k">unsafe</span> <span class="k">fn</span> <span class="nf">decr</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="py">.some_usize</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>but should say</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">impl</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">SomeType</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="k">unsafe</span> <span class="k">fn</span> <span class="nf">decr</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="py">.some_usize</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</div>
+<footer><p>
+
+  Reported by Callum Iddon on Jan  7, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch09-lst04-implied-pub">
+<a href="#errata-print01-ch09-lst04-implied-pub">p152 (ch. 9)</a>
+</h3>
+<div><p>Listing 9-4 declares pub trait methods as public</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">pub</span> <span class="k">unsafe</span> <span class="k">trait</span> <span class="n">GlobalAlloc</span> <span class="p">{</span>
+    <span class="k">pub</span> <span class="k">unsafe</span> <span class="k">fn</span> <span class="nf">alloc</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">layout</span><span class="p">:</span> <span class="n">Layout</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="o">*</span><span class="k">mut</span> <span class="nb">u8</span><span class="p">;</span>
+    <span class="k">pub</span> <span class="k">unsafe</span> <span class="k">fn</span> <span class="nf">dealloc</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">ptr</span><span class="p">:</span> <span class="o">*</span><span class="k">mut</span> <span class="nb">u8</span><span class="p">,</span> <span class="n">layout</span><span class="p">:</span> <span class="n">Layout</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>but pub is not permitted on pub trait methods because it’s implied</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">pub</span> <span class="k">unsafe</span> <span class="k">trait</span> <span class="n">GlobalAlloc</span> <span class="p">{</span>
+    <span class="k">unsafe</span> <span class="k">fn</span> <span class="nf">alloc</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">layout</span><span class="p">:</span> <span class="n">Layout</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="o">*</span><span class="k">mut</span> <span class="nb">u8</span><span class="p">;</span>
+    <span class="k">unsafe</span> <span class="k">fn</span> <span class="nf">dealloc</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">ptr</span><span class="p">:</span> <span class="o">*</span><span class="k">mut</span> <span class="nb">u8</span><span class="p">,</span> <span class="n">layout</span><span class="p">:</span> <span class="n">Layout</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</div>
+<footer><p>
+
+  Reported by necabo on Feb 20, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch09-lst06-fill-default">
+<a href="#errata-print01-ch09-lst06-fill-default">p158 (ch. 9)</a>
+</h3>
+<div><p>Listing 9-6 says</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">self</span><span class="nf">.set_len</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span>
+</code></pre></div></div>
+<p>but should say</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">self</span><span class="nf">.set_len</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">fill</span><span class="p">);</span>
+</code></pre></div></div>
+</div>
+<footer><p>
+
+  Reported by monoid on Dec 22, 2021.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch09-lst05-indent">
+<a href="#errata-print01-ch09-lst05-indent">p158 (ch. 9)</a>
+</h3>
+<div><p>The statement starting <code>let init</code> in Listing 9-5 should be indented one
+more level than it is.</p>
+</div>
+<footer><p>
+
+  Reported by jonhoo on Dec 23, 2021.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch09-lst10-type">
+<a href="#errata-print01-ch09-lst10-type">p161 (ch. 9)</a>
+</h3>
+<div><p>Listing 9-10 says</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">fn</span> <span class="n">barify</span><span class="o">&lt;</span><span class="err">’</span><span class="n">a</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="o">&amp;</span><span class="err">’</span><span class="n">a</span> <span class="k">mut</span> <span class="nb">i32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">Bar</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&lt;</span><span class="err">’</span><span class="n">a</span><span class="o">&gt;&gt;</span> <span class="p">{</span> <span class="o">..</span> <span class="p">}</span>
+<span class="k">let</span> <span class="k">mut</span> <span class="n">x</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="k">let</span> <span class="n">foo</span> <span class="o">=</span> <span class="nf">barify</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">x</span><span class="p">);</span>
+<span class="n">x</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+</code></pre></div></div>
+<p>but should say</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">fn</span> <span class="n">barify</span><span class="o">&lt;</span><span class="nv">'a</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span><span class="p">:</span> <span class="o">&amp;</span><span class="nv">'a</span> <span class="k">mut</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">Bar</span><span class="o">&lt;</span><span class="n">Foo</span><span class="o">&lt;</span><span class="nv">'a</span><span class="o">&gt;&gt;</span> <span class="p">{</span> <span class="o">..</span> <span class="p">}</span>
+<span class="k">let</span> <span class="k">mut</span> <span class="n">x</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="k">let</span> <span class="n">foo</span> <span class="o">=</span> <span class="nf">barify</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">x</span><span class="p">);</span>
+<span class="n">x</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+</code></pre></div></div>
+</div>
+<footer><p>
+
+  Reported by Callum Iddon on Jan 11, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch09-lst11-drop">
+<a href="#errata-print01-ch09-lst11-drop">p162 (ch. 9)</a>
+</h3>
+<div><p>Listing 9-11 says</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">unsafe</span> <span class="k">impl</span><span class="o">&lt;</span><span class="nd">#[may_dangle]</span> <span class="n">T</span><span class="o">&gt;</span> <span class="k">for</span> <span class="nb">Box</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+</code></pre></div></div>
+<p>but should say</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">unsafe</span> <span class="k">impl</span><span class="o">&lt;</span><span class="nd">#[may_dangle]</span> <span class="n">T</span><span class="o">&gt;</span> <span class="nb">Drop</span> <span class="k">for</span> <span class="nb">Box</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+</code></pre></div></div>
+</div>
+<footer><p>
+
+  Reported by Nick Massey on Oct  7, 2021.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch10-memory-operations">
+<a href="#errata-print01-ch10-memory-operations">p177 (ch. 10)</a>
+</h3>
+<div><p>In the “Memory Operations” section, the second sentence is hard to follow. Alter to something like:</p>
+<p>“In reality, <strong>there’s</strong> a lot of machinery between code <strong>that</strong> uses a variable and
+the actual CPU instructions that access your memory hardware.”</p>
+</div>
+<footer><p>
+
+  Reported by David Drysdale on Jan  9, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch11-extra-space-before-comma">
+<a href="#errata-print01-ch11-extra-space-before-comma">p197 (ch. 11)</a>
+</h3>
+<div><p>The fourth sentence of the “Link Kinds” section has an extra space before a
+comma. It says “[…] the binary produced by the compiler , and thus […]”,
+but should instead read “[…] the binary produced by the compiler, and thus
+[…]”.</p>
+</div>
+<footer><p>
+
+  Reported by david-perez on Aug 29, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch11-niche-ffi">
+<a href="#errata-print01-ch11-niche-ffi">p202 (ch. 11)</a>
+</h3>
+<div><p>The sample gives <code>Option&lt;*mut T&gt;</code> as niche optimization used across FFI boundaries.  However, the <code>*mut T</code> is nullable, and is not subject to the niche optimization.  So, <code>Option&lt;NotNull&lt;T&gt;&gt;</code> should be used as an example.</p>
+</div>
+<footer><p>
+
+  Reported by monoid on Dec 27, 2021.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch11-c-void">
+<a href="#errata-print01-ch11-c-void">p207 (ch. 11)</a>
+</h3>
+<div><p>The sentence</p>
+<blockquote>
+<p>Since <code>Foo</code> and <code>Bar</code> are zero-sized types, they can be used in place of <code>()</code>
+in the <code>extern</code> method signatures.</p>
+</blockquote>
+<p>in the final paragraph of the  “Pointer Confusion” section is inaccurate. Both
+<code>Foo</code> and <code>Bar</code> are <code>#[repr(transparent)]</code> wrappers over a <code>c_void</code>, but
+<code>c_void</code> is not equivalent to <code>()</code>, and its size is in fact 1 rather than 0.</p>
+<p>For a deeper explanation of why <code>c_void</code> must not be zero-sized, see
+https://github.com/rust-lang/rust/blob/1be5c8f90912c446ecbdc405cbc4a89f9acd20fd/library/core/src/ffi.rs#L26-L33</p>
+<p>The sentence in question should be replaced with:</p>
+<blockquote>
+<p>Since <code>Foo</code> and <code>Bar</code> are identical to <code>c_void</code> in size and alignment, they
+can be used in place of the latter in the <code>extern</code> method signatures.</p>
+</blockquote>
+</div>
+<footer><p>
+
+  Reported by  on Feb  1, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch12-cross-compile">
+<a href="#errata-print01-ch12-cross-compile">p221 (ch. 12)</a>
+</h3>
+<div><p>Second sentence of last paragraph, change “does no” to “does not”.</p>
+<p>“… something like <code>thumbv7m-none-eabi</code> does no<strong>t</strong>, and doesn’t…”</p>
+</div>
+<footer><p>
+
+  Reported by David Drysdale on Jan 10, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch13-cargo-target-dir">
+<a href="#errata-print01-ch13-cargo-target-dir">p229 (ch. 13)</a>
+</h3>
+<div><p>The paragraph on Cargo disk usage suggests setting <code>[build] target</code> in your <code>~/.cargo/config.toml</code> to use a shared artefacts directory but it should be <code>[build] target-dir</code>.</p>
+</div>
+<footer><p>
+
+  Reported by wezm on Feb  5, 2022.
+
+</p></footer>
+</article>
+
+<article class="error">
+<h3 id="errata-print01-ch13-lst03-drop">
+<a href="#errata-print01-ch13-lst03-drop">p235 (ch. 13)</a>
+</h3>
+<div><p>Listing 13-3 says</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">impl</span> <span class="nb">Drop</span> <span class="k">for</span> <span class="n">DropGuard</span><span class="o">&lt;</span><span class="nv">'_</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">fn</span> <span class="nf">drop</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">lock</span><span class="nf">.store</span><span class="p">(</span><span class="k">true</span><span class="p">,</span> <span class="nn">Ordering</span><span class="p">::</span><span class="n">Release</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>but should say</p>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code data-lang="rust"><span class="k">impl</span> <span class="nb">Drop</span> <span class="k">for</span> <span class="n">DropGuard</span><span class="o">&lt;</span><span class="nv">'_</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">fn</span> <span class="nf">drop</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="na">.0</span><span class="nf">.store</span><span class="p">(</span><span class="k">false</span><span class="p">,</span> <span class="nn">Ordering</span><span class="p">::</span><span class="n">Release</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</div>
+<footer><p>
+
+  Reported by monoid/necabo on Dec 27, 2021.
+
+</p></footer>
+</article>
+
+</section>
+
+
+</body>
+</html>
