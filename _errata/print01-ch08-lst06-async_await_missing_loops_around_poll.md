@@ -31,7 +31,7 @@ generator fn forward<T>(rx: Receiver<T>, tx: Sender<T>) {
 }
 ```
 
-but should say
+but is missing a `loop` around the call to `poll`. It should say
 
 ```rust
 generator fn forward<T>(rx: Receiver<T>, tx: Sender<T>) {
