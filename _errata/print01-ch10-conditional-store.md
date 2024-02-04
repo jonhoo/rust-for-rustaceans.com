@@ -6,18 +6,17 @@ reporter: nicarran
 date: 2024-01-31
 ---
 
-On COMPARE_EXCHANGE_WEAK paragraph 2, it is said:
-"
-For example, ARM processors instead have 
-locked load and conditional store operations, where a conditional store will fail 
-> if the value read by an associated locked load has not been written to since 
-the load. 
-"
+In paragraph 2 of the COMPARE_EXCHANGE_WEAK box, the text reads:
 
-It should say (remove "not" on line marked by >):
-"
-For example, ARM processors instead have 
-locked load and conditional store operations, where a conditional store will fail
-> if the value read by an associated locked load has been written to since 
-the load.
-"
+> For example, ARM processors instead have locked load and conditional
+> store operations, where a conditional store will fail if the value
+> read by an associated locked load has not been written to since the
+> load.
+
+The "not" there is erroneous, and the sentence is unclear. The sentence
+should read:
+
+> For example, ARM processors instead have locked load and conditional
+> store operations, where a conditional store will fail if the value
+> read by an associated locked load has been written to at all, _even
+> with the same value_, since the load.
