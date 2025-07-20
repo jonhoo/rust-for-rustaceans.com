@@ -5,6 +5,7 @@ description: >-
   way to professional-level programming in Rust. It covers everything you need
   to build and maintain larger code bases, write powerful and flexible
   applications and libraries, and confidently expand the scope and complexity
+  of your projects.
 baseurl: ""
 url: "https://rust-for-rustaceans.com"
 domain: rust-for-rustaceans.com
