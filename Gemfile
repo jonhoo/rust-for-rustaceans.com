@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+ruby file: '.ruby-version'
 gem "jekyll", "~> 4.2.1"
 gem "minima", "~> 2.5"
 group :jekyll_plugins do
