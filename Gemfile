@@ -8,4 +8,4 @@ group :jekyll_plugins do
 end
 
 # https://github.com/jekyll/jekyll/issues/8523
-gem "webrick", "~> 1.7"
+gem "webrick", "~> 1.9"
