@@ -4,7 +4,18 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    groups:
+      gha-bump:
+        applies-to: version-updates
+        update-types:
+          - "patch"
+          - "minor"
   - package-ecosystem: bundler
     directory: /
     schedule:
       interval: quarterly
+    groups:
+      all:
+        applies-to: version-updates
+        patterns:
+          - "*"
