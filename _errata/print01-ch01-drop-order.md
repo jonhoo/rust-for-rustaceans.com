@@ -6,9 +6,8 @@ reporter: mbroso
 date: 2026-01-04
 ---
 
-I'm a bit confused by the explanation for the reverse drop order when variables go out of scope.
 It says, "In general, later variables may contain references to earlier values, whereas the inverse cannot happen due to Rust's lifetime rules. And for that reason, Rust drops variables in reverse order."
-Maybe I'm getting it wrong, but the inverse case that an earlier variable may contain references to later values can happen and is not forbidden by Rust's lifetime rules (even though the other case is more common). In the following code snippet the earlier variable `a` contains a reference to the later variable `b` and its fine if `a` is dropped before `b`. Thus, in my example the reverse drop order is not appropriate.
+This is worded too strongly, its not the case that an earlier value cannot hold a reference to a later one (see below code snippet), but rather that if you do so, then the earlier value must be dropped first. Since this is a consequence of the reverse drop order, it might help to add another motivation for the reverse drop order (e.g. to be in line with non Drop types and and last in first out of stack variables).
 
 ```rust
 struct A<'a>(Option<&'a B>);
@@ -36,6 +35,4 @@ fn main() {
     // drop(a);
 }
 ```
-
-Am I missing something here, or would it help to slightly rephrase the explanation of the inverse drop order? (e.g. to be in line with non Drop types and last in first out of stack variables)
 
